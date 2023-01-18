@@ -1,5 +1,5 @@
 // create your App component here
-import react, {useEffect}from "react"
+import react, {useEffect,useState}from "react"
 function App(){
   const [dogImage, setDogImage] = useState([]);
   const [loaded, setLoaded] = useState(false);
@@ -13,9 +13,9 @@ function App(){
       });
   }, []); 
 
-  if (!isLoaded) return <p>Loading...</p>;
+  if (!loaded) return <p>Loading...</p>;
     return(
-        <img src={imageDog} alt="A Random Dog" />
+        <img src={dogImage} alt="A Random Dog" />
     )
 }
 export default App
